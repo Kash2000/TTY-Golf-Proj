@@ -1,0 +1,35 @@
+/*
+ * SHIVALI SINGH
+ * Net ID- ssingh53
+ * Assignment- Project 2
+ * LAB TR 11:05-12:20
+ * I collaborated with Kashish Dewnani (kdewnani) (31366427)
+ */
+Project Golf explained:
+Instructions:
+Welcome to Golf!
+You can use any club ranging from 1 to 10 when you are at the tee or in the fairway. The Clubs are:
+1) Driver
+2) 3-wood
+3) 3-iron
+4) 4-iron
+5) 5-iron
+6) 6-iron
+7) 7-iron
+8) 8-iron
+9) 9-iron
+10) Wedge
+You will choose the strength of your stroke ranging from 1 to 10. To quit a round before you are done all 18 holes, Enter 0 for both the club and the power and when putting enter 0 for power. 
+
+Program explained:
+
+This program has 5 classes for the game TTY Golf. The classes are as follows: Golf, Instructions, Courses, Club and Putter. The class Golf is the main class where the program will be tested. Since this is an object-oriented design, other classes were made and their methods were called in the main class in order to run the game. The Instructions class contains a method for the instructions of the game. The Golf class first prints out all the instructions to the user to tell them how to play the game and when they are able to quit the game. Next, a while loop is used so that the game can be played again after one round of 18 holes have been completed. The user is prompted to select either 1, 2 or 3 in order to select the course they want to play or whether they want to quit. After selecting the course, the main program calls the respective course’s method from the Courses class. This TTY game of Golf has two courses (King’s Course and Sawgrass Course). Depending on the course chosen, one of the course’s method would be called. Each course has 18 holes and the par and yardage of each hole is stored in two arrays. With the exception of the arrays, both courses run in a similar fashion. After the course method has been called, the program enters a for loop for the program to loop 18 times (because there are 18 holes). The program then calls the hole method. In this method, certain conditions have been placed in order to tell the user the game situation. For example, it tells the user whether they are in the fairway or in the green and how many yards or feet they are away from the hole. Depending on whether they are in the fairway or the green, the fairway or green method would be called. If the ball is in the fairway (That is that the absolute value of the distance is greater than 20 yards), then the fairway method is called. This method then creates an object and calls the Club method in the Clubs class. The club method prompts the user to enter a number corresponding to the club they would like to use and also prompts them to enter a power they would like to hit the ball. Using the switch statement, based on the club value entered and power entered, the ball would travel a certain distance and this distance is calculated by the nextDistance method called in every case of the switch statement. The nextDistance method utilizes the nextGaussian method to calculate the distance in yards. The distance calculated is then returned and it is printed so that the user knows how much distance the ball is travelling. If an invalid number is entered, the ball does not move and the user is penalized one stroke. These series of methods continue as long as the condition (That is that the absolute value of the distance is greater than 20 yards) is met. When the ball is within 20 yards (60 feet) of the hole, according to the conditions of the hole method, the if statement would call the green method. The green method creates an object that calls the Putter1 method in the Putter class. The Putter1 method is similar to the Club method except that the club is fixed (it is a putter). Therefore, a power is inputted and using the nextGaussian method a distance is calculated and this distance is returned (in feet). Once the user hits the ball within 1 and -1 of the hole, the user has hit the ball in the hole. Therefore, the user will now move on to the next hole and the same methods repeat. Once the user has completed hole 18, the program exists the for loop in the Courses class and goes back to the Golf class. Then the program prints the final score and the user is prompted to select a course or quit the game (Therefore they are able to choose whether to play again or not).
+
+Extra-credit explained:
+
+The program runs as shown above but the program explanation skips the details of the extra-credit that we have incorporated into the program. 
+Firstly, we used golf language such as “Bogey”, “Ace” and “Birdie”, in order to make the game seem more like it should be in real-life. 
+
+Next, we used System.exit(1); in various places so that the user could quit the game at any point. It was used as case 3 in the start of the game. It is used in the Club and Putter1 method so that the user can enter 0 to quit the game. Therefore, whenever the user is prompted to enter a value, they are able to exit the game.
+
+Lastly, in a real game of golf, there are hazards. A sand bunker and river were added to some of the holes. In order to implement the hazards, a new method hazard was created. This was similar to hole, except it has more conditions. In the condition that the distance should be greater than 20, three additional conditions were added. The first two both generate a random range and, in this range, lies the sand bunker and the river. The third condition continues the game as it usually would in the hole method. When it lands in the sand bunker, the sand bunker method is called whereby the user must use a wedge in order to get the ball out of the sand bunker and the ball would therefore only travel a short distance. If the ball lands in the river, the program would still call the fairway method but would revert back to where the ball was hit from into the river. Therefore, the ball would be out of bounds and the user would lose a stroke and the ball would be put back to the original place it was hit from. Therefore, when the user is in hazard, the game state changes and this make the game much more interesting.
