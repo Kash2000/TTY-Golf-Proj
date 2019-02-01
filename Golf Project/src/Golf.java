@@ -1,9 +1,9 @@
 /*
- * SHIVALI SINGH
- * Net ID- ssingh53
+ * Kashish Dewnani
+ * Net ID- kdewnani
  * Assignment- Project2
- * LAB TR 11:05-12:20
- * I collaborated with Kashish Dewnani (kdewnani) (31366427)
+ * LAB WF
+ * I collaborated with Shivali Singh
  */
 import java.util.Scanner;
 public class Golf {
@@ -15,7 +15,7 @@ public class Golf {
 		i.Instruction1();//Calls Instruction1 method in Instructions Class
 		while (true) {
 			//Prints the Main Menu of the Game
-			System.out.println("\n Choose one of the options: \n 1.The King’s Course, \n 2.The Stadium Course at Sawgrasss \n 3.Quit Game");
+			System.out.println("\n Choose one of the options: \n 1.The Kingâ€™s Course, \n 2.The Stadium Course at Sawgrasss \n 3.Quit Game");
 			System.out.print("Please select your option [1-3]");
 			int course = input.nextInt();
 			//Uses a switch-statement to choose a course or quit the game
